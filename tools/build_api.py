@@ -179,6 +179,8 @@ def build_project(src_path, build_path, target, toolchain_name,
             for path in libraries_paths:
                 resources.add(toolchain.scan_resources(path))
 
+        resources.objects.sort()
+
         if linker_script is not None:
             resources.linker_script = linker_script
 
